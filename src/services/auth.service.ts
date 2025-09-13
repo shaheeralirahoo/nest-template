@@ -58,6 +58,7 @@ export class AuthService {
         }
 
         const createLoggedDevice = await this.repo.LoggedDeviceEntity.save({ ...body, userRecord: user.id });
+        console.log("createLoggedDevice =>", createLoggedDevice.id)
         const payload = { sub: createLoggedDevice.id };
         const token = await this.jwtService.signAsync(payload, { expiresIn: ENV.JwtExpire, secret: ENV.JwtSecret });
 

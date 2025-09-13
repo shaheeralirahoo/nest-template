@@ -61,7 +61,7 @@ export class LogInDTO {
     })
     @IsString({ message: 'Password must be a string' })
     @IsNotEmpty({ message: 'Password cannot be empty' })
-    @MinLength(8, { message: 'Password must be at least 8 characters long' })  // Enforce minimum length for stronger security
+    @MinLength(8, { message: 'Password must be at least 8 characters long' })  
     password: string;
 
     @ApiProperty({
@@ -74,9 +74,11 @@ export class LogInDTO {
 
     @ApiProperty({
         description: 'The FCM token for the user.',
-        example: 'fcmToken12345',  // Example value for Swagger UI
+        example: 'fcmToken12345', 
     })
     @IsString({ message: 'FCM Token must be a string' })
     @IsNotEmpty({ message: 'FCM Token cannot be empty' })
     fcmToken: string;
 }
+
+

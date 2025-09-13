@@ -36,7 +36,7 @@ export class AuthGuard implements CanActivate {
         if (!token) {
             throw new UnauthorizedException("Invalid Token Login again");;
         }
-        // console.log("token =>", token)
+        console.log("token =>", token)
         try {
             const payload = await this.jwtService.verifyAsync(
                 token,
@@ -48,7 +48,7 @@ export class AuthGuard implements CanActivate {
                 throw new UnauthorizedException("Invalid Token Login again");
             }
 
-            // console.log("payload =>", payload)
+            console.log("payload =>", payload)
 
             const loggedDevice = await this.repo.LoggedDeviceEntity.findOne({ where: { id: payload.sub } })
             if (!loggedDevice) {

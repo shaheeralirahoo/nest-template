@@ -9,7 +9,7 @@ import { AuthModule } from './modules/auth.module';
 import { EntityModule } from './modules/entitties.module';
 import { TypeOrmModuleRootAsync } from './configs/typeOrm.config';
 import { PostModule } from './modules/post.module';
-import { TransformInterceptor } from './utils/interceptors/reponse.interceptor';
+
 
 
 @Module({
@@ -34,10 +34,6 @@ import { TransformInterceptor } from './utils/interceptors/reponse.interceptor';
       provide: APP_GUARD,
       useClass: RolesGuard,
     },
-    {
-      provide:APP_INTERCEPTOR,
-      useClass:TransformInterceptor
-    }
   ],
 })
 export class AppModule { }

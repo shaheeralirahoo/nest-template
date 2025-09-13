@@ -76,7 +76,7 @@ DATABASE_NAME=your_db
 ### 4. Run the app
 
 ```bash
-npm run start:dev
+npm run dev
 ```
 
 API:
